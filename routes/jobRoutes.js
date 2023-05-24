@@ -6,4 +6,9 @@ router.get('/jobs', (req, res) => {
   jobCtrls.getJobs(req, res); 
 });
 
+router.get('/jobs/:id', (req, res) => {
+    console.log('Hit the /jobs/:id route');
+    jobCtrls.getJobById(req, res); 
+  });
+
 module.exports = router;

@@ -15,4 +15,5 @@ mongoose.connection
 
     module.exports = {
         Job: require('./job')
+        : require('./job')
     }
