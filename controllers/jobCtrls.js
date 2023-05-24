@@ -74,6 +74,35 @@ const deleteJob = async (req, res) => {
       res.status(500).json({ error: 'Server error' });
     }
   };
+
+  const updateJob = async (req, res) => {
+  try {
+    const { id } = req.body; 
+    const { company, position, appStatus, nextSteps, deadline, dateApplied, importantDate, notes, finalResult } = req.body;
+
+    const updateJob = await Job.findByIdAndUpdate(id, {
+      company,
+      position,
+      appStatus,
+      nextSteps,
+      deadline,
+      dateApplied,
+      importantDate,
+      notes,
+      finalResult
+    }, { new: true });
+
+    if (!updateJob) {
+      return res.status(404).json({ error: 'Job not found' });
+    }
+
+    console.log(`Updated Job: ${updatedJob}`);
+    res.json(updatedJob);
+  } catch (error) {
+    console.log('Update Job Error:', error);
+    res.status(500).json({ error: 'Server error' });
+  }
+};
   
-  module.exports = { createJob, getJobs, getJobById, deleteJob }
+  module.exports = { createJob, getJobs, getJobById, deleteJob, updateJob  }
 

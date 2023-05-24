@@ -17,6 +17,11 @@ router.get('/jobs/:id', (req, res) => {
   jobCtrls.getJobById(req, res); 
 });
 
+router.put('/jobs/edit', (req, res) => {
+    console.log('Hit the /jobs/edit route');
+    jobCtrls.updateJob(req, res);
+  });
+
 router.delete('/jobs/delete', (req, res) => {
     console.log('Hit the /jobs/delete route');
     jobCtrls.deleteJob(req, res);
