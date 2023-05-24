@@ -20,5 +20,29 @@ const getJobById = async (req, res) => {
       res.status(500).json({ error: 'Server error' });
     }
   };
+  const createJob = async (req, res) => {
+    try {
+      
+      const { company, position, appStatus, nextSteps, deadline, dateApplied, importantDate, notes, finalResult } = req.body;
+  
+     
+      const job = await Job.create({
+        company,
+        position,
+        appStatus,
+        nextSteps,
+        deadline,
+        dateApplied,
+        importantDate,
+        notes,
+        finalResult
+      });
+  
+      res.json(job);
+    } catch (error) {
+      res.status(500).json({ error: 'Server error' });
+    }
+  };
 
-module.exports = { getJobs, getJobById };
+
+module.exports = { getJobs, getJobById, createJob};

@@ -1,9 +1,10 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
-const app = express();
 const cors = require('cors');
-const routes = require('./routes/jobRoutes.js') 
+
+const app = express();
+const routes = require('./routes/jobRoutes.js');
 const PORT = process.env.PORT;
 const MONGODB_URL = process.env.MONGODB_URL;
 
@@ -11,7 +12,12 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use('/', routes); 
+app.use((req, res, next) => {
+  console.log('Middleware');
+  next();
+});
+
+app.use('/', routes);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'NOT A PROPER ROUTE' });
