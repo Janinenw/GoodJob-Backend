@@ -9,8 +9,9 @@ const JobSchema = new mongoose.Schema({
     dateApplied:{type: Date, required: true},
     importantDate: { type: String,},
     notes: { type: String, default: true },
-    finalResult: { type: String, enum:['Accepted', 'Rejected'], default: true}
+    finalResult: { type: String, enum:['Accepted', 'Rejected'],}
 });
 
 const Job = mongoose.model("Job", JobSchema);
 module.exports = Job;
+
