@@ -8,11 +8,12 @@ const userSchema = mongoose.Schema({
 
     email: {
         type: String,
-        required:[true, 'add email']
+        required:[true, 'add email'],
         unique: true
     },
 
     password: {
+        type: String,
         required: [true, 'add  password']
     }
 
@@ -20,7 +21,7 @@ const userSchema = mongoose.Schema({
 {timestamps:true
 })
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', userSchema);
 
 
 module.exports = User;
