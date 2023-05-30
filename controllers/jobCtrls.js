@@ -105,4 +105,3 @@ const deleteJob = async (req, res) => {
 };
   
   module.exports = { createJob, getJobs, getJobById, deleteJob, updateJob  }
-
