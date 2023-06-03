@@ -1,9 +1,11 @@
-const Job = require('../models/Job');
+
+const Job = require('../models/job');
 const mongoose = require('mongoose');
+const asyncHandler = require('express-async-handler')
 
 const getJobs = async (req, res) => {
   try {
-    const jobs = await Job.find();
+    const jobs = await Job.find({user_id: req.user._id});
     console.log('Get Jobs:', jobs);
     res.json(jobs);
   } catch (error) {
@@ -38,6 +40,7 @@ const createJob = async (req, res) => {
     const { company, position, appStatus, nextSteps, deadline, dateApplied, importantDate, notes, finalResult } = req.body;
 
     const job = await Job.create({
+      user_id: req.user._id,
       company,
       position,
       appStatus,
@@ -47,7 +50,9 @@ const createJob = async (req, res) => {
       importantDate,
       notes,
       finalResult
+    
     });
+    
 
     console.log('Create Job:', job);
 
