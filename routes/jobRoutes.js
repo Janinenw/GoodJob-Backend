@@ -23,9 +23,9 @@ router.put('/jobs/edit', protect, (req, res) => {
     jobCtrls.updateJob(req, res);
   });
 
-router.delete('/jobs/delete', protect, (req, res) => {
+  router.delete('/jobs/delete/:id', protect, (req, res) => {
     console.log('Hit the /jobs/delete route');
+    console.log('ID:', req.params.id);
     jobCtrls.deleteJob(req, res);
   });
-
 module.exports = router;
