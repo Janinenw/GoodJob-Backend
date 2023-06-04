@@ -18,14 +18,16 @@ router.get('/jobs/:id',protect, (req, res) => {
   jobCtrls.getJobById(req, res); 
 });
 
-router.put('/jobs/edit', protect, (req, res) => {
-    console.log('Hit the /jobs/edit route');
-    jobCtrls.updateJob(req, res);
-  });
+// router.put('/jobs/edit', protect, (req, res) => {
+//     console.log('Hit the /jobs/edit route');
+//     jobCtrls.updateJob(req, res);
+//   });
 
-  router.delete('/jobs/delete/:jobId', protect, (req, res) => {
-    console.log('Hit the /jobs/delete route');
-    console.log('ID:', req.params.jobId);
-    jobCtrls.deleteJob(req, res);
-  });
+router.put('/jobs/edit/:jobId', protect, jobCtrls.updateJob);
+
+router.delete('/jobs/delete/:id', protect, (req, res) => {
+  console.log('Hit the /jobs/delete route');
+  console.log('ID:', req.params.id);
+  jobCtrls.deleteJob(req, res);
+});
 module.exports = router;
