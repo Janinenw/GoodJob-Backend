@@ -7,7 +7,7 @@ const app = express();
 const routes = require('./routes/jobRoutes.js');
 const userRoutes = require('./routes/userRoutes.js');
 const PORT = process.env.PORT;
-const MONGODB_URL = process.env.MONGODB_URL;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -20,13 +20,16 @@ app.use((req, res, next) => {
 
 app.use('/', routes);
 app.use('/user', userRoutes);
-
+// added for deployment
+app.get('/', ( req, res) => {
+  res.send("HOME PAGE")
+})
 
 app.use((req, res) => {
   res.status(404).json({ message: 'NOT A PROPER ROUTE' });
 });
 
-mongoose.connect(MONGODB_URL, {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
