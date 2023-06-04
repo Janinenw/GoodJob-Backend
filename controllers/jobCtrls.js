@@ -63,22 +63,7 @@ const createJob = async (req, res) => {
   }
 };
 
-const deleteJob = async (req, res) => {
-    try {
-      const { jobId } = req.params;
-      const deletedJob = await Job.findByIdAndDelete(jobId);
-  
-      if (!deletedJob) {
-        return res.status(404).json({ error: 'Job not found' });
-      }
-  
-      console.log(`Deleted Job: ${deletedJob}`);
-      res.json({ message: 'Job deleted successfully' });
-    } catch (error) {
-      console.log('Delete Job Error:', error);
-      res.status(500).json({ error: 'Server error' });
-    }
-  };
+
 
 const updateJob = async (req, res) => {
   try {
@@ -113,5 +98,21 @@ const updateJob = async (req, res) => {
   }
 };
 
+const deleteJob = async (req, res) => {
+  try {
+    const { jobId } = req.params;
+    const deletedJob = await Job.findByIdAndDelete(jobId);
+
+    if (!deletedJob) {
+      return res.status(404).json({ error: 'Job not found' });
+    }
+
+    console.log(`Deleted Job: ${deletedJob}`);
+    res.json({ message: 'Job deleted successfully' });
+  } catch (error) {
+    console.log('Delete Job Error:', error);
+    res.status(500).json({ error: 'Server error' });
+  }
+};
   
 module.exports = { createJob, getJobs, getJobById, deleteJob, updateJob }
