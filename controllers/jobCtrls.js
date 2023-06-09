@@ -40,7 +40,17 @@ const createJob = async (req, res) => {
     console.log('Request body:', req.body);
     console.log('Authenticated user:', req.user);
 
-    const { company, position, appStatus, nextSteps, deadline, dateApplied, importantDate, notes, finalResult } = req.body;
+    const { 
+      company = "", 
+      position = "", 
+      appStatus = "Pending", 
+      nextSteps = "", 
+      deadline = new Date(), 
+      dateApplied = new Date(), 
+      importantDate = new Date(), 
+      notes = "", 
+      finalResult = "Pending" 
+    } = req.body;
 
     const job = await Job.create({
       user_id: req.user._id,
@@ -65,11 +75,20 @@ const createJob = async (req, res) => {
   }
 };
 
-
 const updateJob = async (req, res) => {
   try {
     const jobId = req.params.jobId;
-    const { company, position, appStatus, nextSteps, deadline, dateApplied, importantDate, notes, finalResult } = req.body;
+    const { 
+      company = "", 
+      position = "", 
+      appStatus = "Pending", 
+      nextSteps = "", 
+      deadline = new Date(), 
+      dateApplied = new Date(), 
+      importantDate = new Date(), 
+      notes = "", 
+      finalResult = "Pending" 
+    } = req.body;
 
     const updatedJob = await Job.findByIdAndUpdate(
       jobId,
