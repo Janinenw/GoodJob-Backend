@@ -31,7 +31,7 @@
 //       notes: 'Dentist is Vampire. All interviews must be scheduled at night',
 //       finalResult: 'Accepted',
 //     },
-//     {
+// //     {
 //       company: 'Bootstrap Farms',
 //       position: 'Potato Manager',
 //       appStatus: 'Sent',

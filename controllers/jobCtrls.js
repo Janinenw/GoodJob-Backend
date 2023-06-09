@@ -37,6 +37,9 @@ const getJobById = async (req, res) => {
 
 const createJob = async (req, res) => {
   try {
+    console.log('Request body:', req.body);
+    console.log('Authenticated user:', req.user);
+
     const { company, position, appStatus, nextSteps, deadline, dateApplied, importantDate, notes, finalResult } = req.body;
 
     const job = await Job.create({
@@ -50,19 +53,17 @@ const createJob = async (req, res) => {
       importantDate,
       notes,
       finalResult
-    
     });
-    
 
     console.log('Create Job:', job);
 
     res.json(job);
   } catch (error) {
     console.log('Create Job Error:', error);
+    console.log('Request body at time of error:', req.body);
     res.status(500).json({ error: 'Server error' });
   }
 };
-
 
 
 const updateJob = async (req, res) => {
