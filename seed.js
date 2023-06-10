@@ -62,5 +62,3 @@ const seedJob = async () => {
 
 
 seedJob();
-
-
