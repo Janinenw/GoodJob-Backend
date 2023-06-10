@@ -41,7 +41,7 @@ mongoose.connection
       dateApplied: new Date(),
       importantDate: '',
       notes: 'Call Gore',
-      finalResult:'N/A but it will be!',
+      finalResult:'Did not hear back, company can go suck an egg',
       user_id: 'the_user_id_here' 
     },
   ];
