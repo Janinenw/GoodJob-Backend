@@ -1,6 +1,7 @@
 ### GoodJob!
 
-Live Application:https://goodjobsoproud.herokuapp.com/home
+Live Application:https://goodjobsoproud.herokuapp.com
+
 Frontend Repository: https://github.com/Janinenw/GoodJob-Frontend
 
 
