@@ -85,8 +85,6 @@ Users have the ability to:
 - User authentication
 - Deployment
 
-## Initial Wireframe
-
 
 ## Next Steps:
 
