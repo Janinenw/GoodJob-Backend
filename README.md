@@ -5,7 +5,7 @@ Live Application:https://goodjobsoproud.herokuapp.com
 Frontend Repository: https://github.com/Janinenw/GoodJob-Frontend
 
 
-GoodJob! is a full CRUD MERN application that aims to make the job hunting process slightly less painful. It helps users keep track of jobs to which they’ve applied, log important information such as deadlines, and keep track of the results of their efforts.  GoodJob! aims to boost morale with it's fun colors, whimiscal feel.  Additionally, it rewards the user with a joke every time they add a job to their tracker, and consoles them with a picture of a puppy every time they recieve a rejection.
+GoodJob! is a full CRUD MERN application that aims to make the job-hunting process slightly less painful. It helps users keep track of jobs to which they’ve applied, log important information such as deadlines, and keep track of the results of their efforts.  GoodJob! aims to boost morale with its fun colors, whimsical feel.  Additionally, it rewards the user with a joke every time they add a job to their tracker, and consoles them with a picture of a puppy every time they receive a rejection.
 
 
 
@@ -22,13 +22,13 @@ GoodJob! is a full CRUD MERN application that aims to make the job hunting proce
 - *Bootstrap
 - *Tailwind
 
-*I recognize that using both Bootstrap and Tailwind in the same appliction is not best practice. However, I wanted to learn to use both frameworks, and get a sense of which will best meet my needs going forward.
+*I recognize that using both Bootstrap and Tailwind in the same application is not best practice. However, I wanted to learn to use both frameworks, and get a sense of which will best meet my needs going forward.
 
 ## Installation 
 
 Necessary installations for running this application locally
 
-Backend: Express, Mongoose, Nodemon, Dotenv, cors, method-override, jsonwebtoken, bcrypt
+Backend: Express, Mongoose, Nodemon, Dotenv, cors, method-override, json webtoken, bcrypt
 
 Frontend: React, react modal, React Bootstrap, Tailwind
 
